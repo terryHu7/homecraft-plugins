@@ -1,0 +1,40 @@
+{
+  "id": "welcome",
+  "version": "1.0.0",
+  "mode": "standard",
+  "minEngine": "0.2.0",
+  "name": {
+    "en": "Welcome (Example)",
+    "zh": "欢迎横幅（示例）"
+  },
+  "description": {
+    "en": "Minimal example plugin for testing the plugin system. Not a real feature plugin.",
+    "zh": "用于测试插件系统的最小示例，非正式插件。"
+  },
+  "author": "terryHu7",
+  "license": "MIT",
+  "category": "ui",
+  "entry": "index.js",
+  "preview": {
+    "en": "preview-en.webp",
+    "zh": "preview-zh.webp"
+  },
+  "permissions": [],
+  "config": {
+    "en": {
+      "type": "string",
+      "default": "Welcome to my island",
+      "description": "Greeting shown in English"
+    },
+    "zh": {
+      "type": "string",
+      "default": "欢迎来到我的小岛",
+      "description": "Greeting shown in Chinese"
+    },
+    "dismissible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Allow visitors to close the greeting badge"
+    }
+  }
+}

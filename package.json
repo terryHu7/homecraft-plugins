@@ -1,0 +1,20 @@
+{
+  "name": "homecraft-plugins",
+  "version": "1.0.0",
+  "description": "Plugin catalog and installer for Homecraft 3D personal websites.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "homecraft-plugins": "./tools/cli.mjs"
+  },
+  "scripts": {
+    "registry": "node tools/registry.mjs",
+    "validate": "node tools/validate.mjs",
+    "test:plugin": "node tools/test-plugin.mjs",
+    "test": "node --test tools/cli.test.mjs",
+    "check": "node tools/validate.mjs && node tools/registry.mjs --check && node --test tools/cli.test.mjs"
+  }
+}
