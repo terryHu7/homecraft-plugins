@@ -11,7 +11,7 @@ import { addPlugin, listInstalled, removePlugin, runCli } from './cli.mjs';
 
 const REPO_ROOT = fileURLToPath(new URL('../', import.meta.url));
 
-function makeMockSite(root, { engineVersion = '0.2.0', hasHost = true } = {}) {
+function makeMockSite(root, { engineVersion = '0.3.0', hasHost = true } = {}) {
   mkdirSync(join(root, 'engine'), { recursive: true });
   mkdirSync(join(root, 'world'), { recursive: true });
   writeFileSync(join(root, 'index.html'), '<title>Test</title>\n');
@@ -30,7 +30,7 @@ test('schema validates manifests and blocks remote script execution and eval', (
     writeFileSync(join(pluginDir, 'plugin.json'), JSON.stringify({
       id: 'evil',
       version: '0.1.0',
-      minEngine: '0.2.0',
+      minEngine: '0.3.0',
       name: { en: 'Evil', zh: '测试' },
       description: { en: 'Test', zh: '测试' },
       author: 'test',
@@ -119,7 +119,7 @@ test('CLI lists, searches, installs frontend + optional backend, updates, and re
     assert.throws(() => addPlugin({ id: 'welcome', site: oldSite, catalogRoot: REPO_ROOT }), /npm run update/);
 
     // Site with plugin host installs cleanly
-    const site = makeMockSite(join(work, 'site'), { engineVersion: '0.2.0', hasHost: true });
+    const site = makeMockSite(join(work, 'site'), { engineVersion: '0.3.0', hasHost: true });
     const added = addPlugin({ id: 'welcome', site, catalogRoot: REPO_ROOT });
     assert.equal(added.action, 'added');
     assert.equal(added.agentGuide, 'world/plugins/welcome/AGENTS.md');
@@ -139,7 +139,7 @@ test('CLI lists, searches, installs frontend + optional backend, updates, and re
     writeFileSync(join(mpDir, 'plugin.json'), JSON.stringify({
       id: 'mock-mp',
       version: '1.0.0',
-      minEngine: '0.2.0',
+      minEngine: '0.3.0',
       name: { en: 'Mock MP', zh: '模拟联机' },
       description: { en: 'Multiplayer', zh: '联机' },
       author: 'tester',

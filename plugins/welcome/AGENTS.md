@@ -4,7 +4,7 @@ Minimal example plugin for testing the Homecraft plugin host, CLI, and CI (not a
 
 ## 1. Preflight
 
-- Target site must include `engine/plugins.js` and `engine/manifest.json` version `>= 0.2.0`.
+- Target site must include `engine/plugins.js` and `engine/manifest.json` version `>= 0.3.0`.
 - If the site is an older fork without `engine/plugins.js`, upgrade `engine/` first using `npm run update` (or the standalone updater in `engine/UPDATING.md`). Do not edit `tools/build.sh` or `index.html`.
 - This plugin runs entirely client-side with zero external requests and no backend directory.
 

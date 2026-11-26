@@ -54,7 +54,7 @@ export function validateManifest(manifest, expectedId = null) {
   if (!validSemver(manifest.version)) errors.push('version must use semver (major.minor.patch)');
   const mode = manifest.mode ?? 'standard';
   if (!MODES.includes(mode)) errors.push(`mode must be one of: ${MODES.join(', ')}`);
-  if (!validSemver(manifest.minEngine)) errors.push('minEngine must use semver (e.g. 0.2.0)');
+  if (!validSemver(manifest.minEngine)) errors.push('minEngine must use semver (e.g. 0.3.0)');
   for (const key of ['name', 'description']) {
     if (!isObj(manifest[key]) || !isText(manifest[key].en) || !isText(manifest[key].zh)) {
       errors.push(`${key} must provide non-empty en and zh strings`);

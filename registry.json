@@ -5,7 +5,7 @@
       "id": "welcome",
       "version": "1.0.0",
       "mode": "standard",
-      "minEngine": "0.2.0",
+      "minEngine": "0.3.0",
       "name": {
         "en": "Welcome (Example)",
         "zh": "欢迎横幅（示例）"
