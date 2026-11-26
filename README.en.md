@@ -5,11 +5,11 @@
 <h1 align="center">Homecraft Plugins</h1>
 
 <p align="center">
-  <strong>The plugin system for <a href="https://github.com/terryHu7/homecraft">Homecraft</a>, a Minecraft-inspired 3D personal website template.</strong>
+  <strong>The plugin system for Homecraft, a Minecraft-inspired 3D personal website template.</strong>
 </p>
 
 <p align="center">
-  <a href="README.md">中文</a> · <b>English</b>
+  <a href="README.md">中文</a> · <b>English</b> · <a href="https://github.com/terryHu7/homecraft">Homecraft</a>
 </p>
 
 ## Catalog
@@ -22,8 +22,16 @@
 
 ## Installation
 
-Select a plugin from the catalog and follow its `AGENTS.md`, or install through the [CLI](AGENTS.md#installing-a-plugin-into-a-homecraft-site).
+Standard plugins install into `world/plugins/<id>/` (with optional server code in `backend/<id>/`) and are enabled through `home.config.js`, leaving `engine/` untouched across upgrades.
 
-## Submission
+Select a plugin from the catalog and have your coding agent follow its `AGENTS.md`, or install it through the CLI (see the [installation guide](AGENTS.md#installing-a-plugin-into-a-homecraft-site)):
 
-Put your plugin in `plugins/<id>/` with a `README.md` and `AGENTS.md`, follow the [submission guide](AGENTS.md#authoring-and-submitting-a-plugin) (see also [CONTRIBUTING.md](CONTRIBUTING.md) and the [Homecraft plugin API](https://github.com/terryHu7/homecraft/blob/main/docs/plugins.md)), and [open a pull request](https://github.com/terryHu7/homecraft-plugins/compare). Once merged, the plugin appears in the catalog.
+```sh
+npx --yes github:terryHu7/homecraft-plugins add <id> --site <site-dir>
+```
+
+## Submission [🔗 Open PR](https://github.com/terryHu7/homecraft-plugins/compare)
+
+Each plugin lives in `plugins/<id>/` with a `plugin.json` manifest, a user-facing `README.md`, an agent-facing `AGENTS.md`, a `LICENSE` file, and an `index.js` entry module (for standard plugins).
+
+Follow the [submission guide](CONTRIBUTING.md) to update the registry, run local checks, and open a pull request (one plugin per PR). Once merged, the plugin appears in the catalog above.
